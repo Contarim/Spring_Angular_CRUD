@@ -1,8 +1,8 @@
 <mat-card>
-    <!-- Name Column -->
+
   <mat-toolbar color="primary">Cursos Disponiveis</mat-toolbar>
 
-    <table mat-table [dataSource]="courses" class="mat-elevation-z8">
+    <table mat-table [dataSource]="courses | async" class="mat-elevation-z8">
     <ng-container matColumnDef="_id">
       <th mat-header-cell *matHeaderCellDef> Nº do Curso </th>
       <td mat-cell *matCellDef="let course"> {{course._id}} </td>
@@ -13,7 +13,6 @@
       <td mat-cell *matCellDef="let course"> {{course.name}} </td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="category">
       <th mat-header-cell *matHeaderCellDef> Categoria </th>
       <td mat-cell *matCellDef="let course"> {{course.category}} </td>
